@@ -22,15 +22,31 @@
       color: #000;
     }
 
-    a {
+    a,
+    a:visited {
       text-decoration: none;
-      display: block;
-      /* makes each link appear on a new line */
-      margin: 5px 0;
-      /* adds space between links */
     }
 
-    a:hover {
+    .green-on-black a,
+    .green-on-black a:visited {
+      color: #00ff00;
+      /* Green text in terminal mode */
+    }
+
+    .green-on-black a:hover,
+    .green-on-black a:active {
+      text-decoration: underline;
+      color: #00ff00;
+    }
+
+    .black-on-white a,
+    .black-on-white a:visited {
+      color: blue;
+      /* Standard blue for links in normal mode */
+    }
+
+    .black-on-white a:hover,
+    .black-on-white a:active {
       text-decoration: underline;
     }
 
@@ -39,12 +55,28 @@
       padding: 10px 20px;
       margin: 10px 0;
       cursor: pointer;
+      border: none;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .green-on-black .button {
       background-color: #005500;
       color: #FFF;
     }
 
-    .button:hover {
+    .green-on-black .button:hover {
       background-color: #003300;
+    }
+
+    .black-on-white .button {
+      background-color: #e0e0e0;
+      /* Light grey background for clarity in normal mode */
+      color: #000;
+    }
+
+    .black-on-white .button:hover {
+      background-color: #c0c0c0;
+      /* Slightly darker grey on hover */
     }
 
     .theme-toggle {
@@ -70,6 +102,7 @@
     }
   </script>
 </head>
+
 <body class="green-on-black">
   <div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>
   <h1>Charles Kitchen</h1>
@@ -81,7 +114,7 @@
     <p>I am a Brooklyn-based software engineer (open to remote or NYC-area) with experience at scale in a Fortune 500
       e-commerce giant. My experience spans from monolithic repositories to microservices architectures and from complex
       SQL Server environments to streamlined PostgreSQL databases. I am obviously not a dream at front-end. When not
-      coding, I am out photographing the birds of Brooklyn.</p>
+      coding, I am out photographing the birds of Brooklyn or in/on the nearest body of water.</p>
   </div>
   <a class="button" href="mailto:charles.kitchen@gmail.com?subject=Job Opportunity">Hire Me</a>
   <div class="section">
@@ -94,7 +127,7 @@
     <a href="https://www.helloprolog.com/">Say Hello, Prolog</a>
   </div>
   <div class="section">
-    <p>Waste some time vibing on a game I made:</p>
+    <p>Waste some time vibing with a game I made:</p>
     <a href="https://www.charles.kitchen/Bad-Sky-Cab/">Play Bad-Sky-Cab</a>
   </div>
 </body>
