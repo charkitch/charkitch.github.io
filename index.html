@@ -1,71 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Terminal Style CV</title>
-    <style>
-        body {
-            background-color: #000;
-            color: #00ff00;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 16px;
-            padding: 20px;
-        }
-        a {
-            color: #00ff00;
-            text-decoration: none;
-            display: block;
-            margin: 5px 0;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .button {
-            display: inline-block;
-            background-color: #005500;
-            padding: 10px 20px;
-            margin: 10px 0;
-            cursor: pointer;
-        }
-        .button:hover {
-            background-color: #003300;
-        }
-        .section {
-            margin-top: 20px;
-        }
-        .section a {
-            margin-left: 20px;
-        }
-        .profile-description {
-            text-align: justify;
-            text-justify: inter-word;
-            margin-bottom: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Terminal Style CV</title>
+  <style>
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 16px;
+      padding: 20px;
+    }
+
+    .green-on-black {
+      background-color: #000;
+      color: #00ff00;
+    }
+
+    .black-on-white {
+      background-color: #FFF;
+      color: #000;
+    }
+
+    a {
+      text-decoration: none;
+      display: block;
+      /* makes each link appear on a new line */
+      margin: 5px 0;
+      /* adds space between links */
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px 0;
+      cursor: pointer;
+      background-color: #005500;
+      color: #FFF;
+    }
+
+    .button:hover {
+      background-color: #003300;
+    }
+
+    .theme-toggle {
+      cursor: pointer;
+      font-size: 16px;
+      padding: 5px 10px;
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 1000;
+    }
+  </style>
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      if (body.classList.contains('green-on-black')) {
+        body.classList.remove('green-on-black');
+        body.classList.add('black-on-white');
+      } else {
+        body.classList.remove('black-on-white');
+        body.classList.add('green-on-black');
+      }
+    }
+  </script>
 </head>
-<body>
-    <h1>Charles Kitchen</h1>
-    <p>Full Stack Software Engineer - Brooklyn, NY</p>
-    <p><strong>Email:</strong> <a href="mailto:charles.kitchen@gmail.com">charles.kitchen@gmail.com</a></p>
-    <p><strong>Phone:</strong> 571-331-0225</p>
-    <p><strong>Skills:</strong> Python, SQL, AWS</p>
-    <div class="profile-description">
-        <p>I am a Brooklyn-based software engineer (open to remote or NYC-area) with experience at scale in a Fortune 500 e-commerce giant. My experience spans from monolithic repositories to microservices architectures and from complex SQL Server environments to streamlined PostgreSQL databases. I am obviously not a dream at front-end. When not coding, I am out photographing the birds of Brooklyn.</p>
-    </div>
-    <a class="button" href="mailto:charles.kitchen@gmail.com?subject=Job Opportunity">Hire Me</a>
-    <div class="section">
-        <p>Connect with me:</p>
-        <a href="https://github.com/charkitch" title="GitHub">GitHub</a>
-        <a href="https://linkedin.com/in/charleskitchen/" title="LinkedIn">LinkedIn</a>
-    </div>
-    <div class="section">
-        <p>Check out the cool thing we are building:</p>
-        <a href="https://www.helloprolog.com/">Say Hello, Prolog</a>
-    </div>
-    <div class="section">
-        <p>Waste some time vibing on a game I made:</p>
-        <a href="https://www.charles.kitchen/Bad-Sky-Cab/">Play Bad-Sky-Cab</a>
-    </div>
+<body class="green-on-black">
+  <div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>
+  <h1>Charles Kitchen</h1>
+  <p>Full Stack Software Engineer - Brooklyn, NY</p>
+  <p><strong>Email:</strong> <a href="mailto:charles.kitchen@gmail.com">charles.kitchen@gmail.com</a></p>
+  <p><strong>Phone:</strong> 571-331-0225</p>
+  <p><strong>Skills:</strong> Python, SQL, AWS</p>
+  <div class="profile-description">
+    <p>I am a Brooklyn-based software engineer (open to remote or NYC-area) with experience at scale in a Fortune 500
+      e-commerce giant. My experience spans from monolithic repositories to microservices architectures and from complex
+      SQL Server environments to streamlined PostgreSQL databases. I am obviously not a dream at front-end. When not
+      coding, I am out photographing the birds of Brooklyn.</p>
+  </div>
+  <a class="button" href="mailto:charles.kitchen@gmail.com?subject=Job Opportunity">Hire Me</a>
+  <div class="section">
+    <p>Connect with me:</p>
+    <a href="https://github.com/charkitch" title="GitHub">GitHub</a>
+    <a href="https://linkedin.com/in/charleskitchen/" title="LinkedIn">LinkedIn</a>
+  </div>
+  <div class="section">
+    <p>Check out the cool thing we are building:</p>
+    <a href="https://www.helloprolog.com/">Say Hello, Prolog</a>
+  </div>
+  <div class="section">
+    <p>Waste some time vibing on a game I made:</p>
+    <a href="https://www.charles.kitchen/Bad-Sky-Cab/">Play Bad-Sky-Cab</a>
+  </div>
 </body>
+
 </html>
