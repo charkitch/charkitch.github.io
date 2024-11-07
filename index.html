@@ -1,133 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Terminal Style CV</title>
-  <style>
-    body {
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 16px;
-      padding: 20px;
-    }
-
-    .green-on-black {
-      background-color: #000;
-      color: #00ff00;
-    }
-
-    .black-on-white {
-      background-color: #FFF;
-      color: #000;
-    }
-
-    a,
-    a:visited {
-      text-decoration: underline;
-    }
-
-    .green-on-black a,
-    .green-on-black a:visited {
-      color: #00ff00;
-    }
-
-    .green-on-black a:hover,
-    .green-on-black a:active {
-      text-decoration: underline;
-      color: #00ff00;
-    }
-
-    .black-on-white a,
-    .black-on-white a:visited {
-      color: blue;
-    }
-
-    .black-on-white a:hover,
-    .black-on-white a:active {
-      text-decoration: underline;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 10px 0;
-      cursor: pointer;
-      border: none;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .green-on-black .button {
-      background-color: #005500;
-      color: #FFF;
-    }
-
-    .green-on-black .button:hover {
-      background-color: #003300;
-    }
-
-    .black-on-white .button {
-      background-color: #e0e0e0;
-      color: #000;
-    }
-
-    .black-on-white .button:hover {
-      background-color: #c0c0c0;
-    }
-
-    .theme-toggle {
-      cursor: pointer;
-      font-size: 16px;
-      padding: 5px 10px;
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      z-index: 1000;
-    }
-  </style>
-  <script>
-    function toggleTheme() {
-      const body = document.body;
-      if (body.classList.contains('green-on-black')) {
-        body.classList.remove('green-on-black');
-        body.classList.add('black-on-white');
-      } else {
-        body.classList.remove('black-on-white');
-        body.classList.add('green-on-black');
-      }
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charles Kitchen | Software Engineer</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        /* Additional icon-specific styles */
+        .icon {
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+    </style>
 </head>
+<body class="terminal-theme">
+    <div class="theme-toggle-container clearfix">
+        <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    </div>
 
-<body class="green-on-black">
-  <div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>
-  <h1>Charles Kitchen</h1>
-  <p>Full Stack Software Engineer - Brooklyn, NY</p>
-  <p><strong>Email:</strong> <a href="mailto:charles.kitchen@gmail.com">charles.kitchen@gmail.com</a></p>
-  <p><strong>Skills:</strong> Python, SQL, AWS</p>
-  <div class="profile-description">
-    <p>I am a Brooklyn-based software engineer (open to remote or NYC-area) with experience at scale in a Fortune 500
-      e-commerce giant. My experience spans from monolithic repositories to microservices architectures and from complex
-      SQL Server environments to streamlined PostgreSQL databases. I am obviously not a dream at front-end. When not
-      coding, I am out photographing the birds of Brooklyn or in/on the nearest body of water.</p>
-  </div>
-  <a class="button" href="mailto:charles.kitchen@gmail.com?subject=Job Opportunity">Email Me</a>
-  <div class="section">
-    <p>Connect with me:</p>
-    <a href="https://github.com/charkitch" title="GitHub">GitHub</a>
-    <a href="https://linkedin.com/in/charleskitchen/" title="LinkedIn">LinkedIn</a>
-    <a href="https://www.imdb.com/name/nm8139790/" title="IMDb">IMDb</a>
-  </div>
-  <div class="section">
-    <p>Check out the cool thing we are building:</p>
-    <a href="https://www.helloprolog.com/">Say Hello to Prolog</a>
-    <p>Or try out the beta</p>
-    <a href="https://app.helloprolog.com/">Prolog</a>
-  </div>
-  <div class="section">
-    <p>Waste some time vibing with a game I made:</p>
-    <a href="https://www.charles.kitchen/Bad-Sky-Cab/">Play Bad-Sky-Cab</a>
-  </div>
+    <div class="container">
+        Charles Kitchen 
+        <span>|</span>
+        <a href="https://github.com/charkitch" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+            GitHub
+        </a>
+        <span>|</span>
+        <a href="https://linkedin.com/in/charleskitchen/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+            </svg>
+            LinkedIn
+        </a>
+        <span>|</span>
+        <a href="https://www.imdb.com/name/nm8139790/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/>
+                <path d="M7 2v20M17 2v20M2 12h20M2 7h20M2 17h20"/>
+            </svg>
+            IMDb
+        </a>
+        <span>|</span>
+        <a href="mailto:charles.kitchen@gmail.com">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            Email
+        </a>
+
+        <div class="main-content">
+            <div>Full Stack Software Engineer - Brooklyn, NY</div>
+
+            <p>
+                I am a Brooklyn-based software engineer (open to remote or NYC-area) with experience at scale in a Fortune 500 e-commerce giant. My experience spans from monolithic repositories to microservices architectures and from complex SQL Server environments to streamlined PostgreSQL databases. I am obviously not a dream at front-end. When not coding, I am out photographing the birds of Brooklyn or in/on the nearest body of water.
+            </p>
+        </div>
+
+        <div class="projects">
+            <div>Check out what we're building:</div>
+            <div><a href="https://www.helloprolog.com/" class="underline-link">Say Hello to Prolog</a> or <a href="https://app.helloprolog.com/" class="underline-link">try the beta</a></div>
+
+            <div style="margin-top: 1rem;">Play my game:</div>
+            <div><a href="https://www.charles.kitchen/Bad-Sky-Cab/" class="underline-link">Play Bad-Sky-Cab</a></div>
+        </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
 </body>
-
 </html>
